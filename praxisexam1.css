@@ -1,0 +1,173 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-image: url('Istqb2.webp'); /* Imaginea de fundal */
+    background-size: cover;
+    background-position: center;
+}
+
+#quiz-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Alb transparent */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Ușor mai mare pentru un efect subtil */
+    text-align: center;
+    width: 80%;
+    max-width: 800px;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.answer-options {
+    margin-top: 20px;
+    text-align: left;
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+.answer-options td {
+    padding: 10px;
+    font-size: 18px;
+    color: #555;
+    border-bottom: 1px solid #ddd;
+}
+
+.answer-options td:first-child {
+    width: 30px;
+    text-align: center;
+}
+
+.answer-options td:last-child {
+    width: 50px;
+    text-align: center;
+}
+
+.answer-options input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #007bff; /* culoare personalizată pentru checkbox */
+    appearance: none; /* elimină stilul implicit */
+    border: 2px solid #007bff;
+    border-radius: 0; /* face casuța pătrată */
+    cursor: pointer;
+}
+
+.answer-options input[type="checkbox"]:checked {
+    background-color: #007bff;
+    box-shadow: inset 0 0 0 4px white; /* efect vizual când este selectat */
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px 5px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#result-message {
+    font-size: 18px;
+    font-weight: bold;
+    color: #28a745;
+    margin-top: 20px;
+}
+
+#smiley {
+    font-size: 48px;
+    margin-top: 10px;
+}
+
+#timer {
+    font-size: 18px;
+    font-weight: bold;
+    color: #dc3545;
+    margin-top: 20px;
+}
+
+/* Media Queries pentru responsive design */
+
+@media (max-width: 768px) {
+    #quiz-container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .answer-options td {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    #result-message, #timer {
+        font-size: 16px;
+    }
+
+    #smiley {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 18px;
+    }
+
+    .answer-options td {
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    button {
+        padding: 7px 10px;
+        font-size: 12px;
+    }
+
+    #result-message, #timer {
+        font-size: 14px;
+    }
+
+    #smiley {
+        font-size: 30px;
+    }
+}
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 2px solid #007bff;
+    border-radius: 0; /* face casuța pătrată */
+    cursor: pointer;
+}
+
+input[type="radio"]:checked {
+    background-color: #007bff;
+    box-shadow: inset 0 0 0 4px white;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certification Foundation Level V4.0 (ISTQB) </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="quiz-container">
+    <!-- Container pentru butonul din dreapta sus -->
+    <div id="top-buttons">
+        <button id="go-to-page-btn" onclick="goToPage2()"> Prüfung Vorbereitung</button>
+    </div>
+    
+    <h1>Certification Foundation Level V4.0 </h1>
+    <h2>(ISTQB)</h2>
+    <div id="question-container"></div>
+    <div>
+        <button id="prev-btn">Vorherige Frage</button>
+        <button id="next-btn">Nächste Frage</button>
+    </div>
+    <div>
+        <button id="show-answer-btn">Anzeige Antwort</button>
+    </div>
+    <p id="result-message"></p>
+    <p id="explanation"></p> <!-- Acesta este elementul nou adăugat pentru explicație -->
+</div>
+
+<script src="script.js"></script>
+<script>
+    function goToPage2() {
+        window.location.href = 'pagina2.html'; // Aici specifici numele paginii către care vrei să redirecționezi
+    }
+
+    // Aici vine funcția showAnswer actualizată
+</script>
+</body>
+</html>
