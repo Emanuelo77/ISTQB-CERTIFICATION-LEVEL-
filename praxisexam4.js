@@ -524,11 +524,12 @@ answers: [
 
 
 let currentQuestionIndex = 0;
-let userAnswers = new Array(questions.length).fill(null);
+let userAnswers = new Array(questions.length).fill(null); // Stochează răspunsurile utilizatorului
 let score = 0;
 let timer;
-let timeLeft = 3600;
+let timeLeft = 3600; // 60 de minute în secunde
 
+// Funcția pentru pornirea timer-ului
 function startTimer() {
     timer = setInterval(() => {
         timeLeft--;
@@ -537,19 +538,21 @@ function startTimer() {
         document.getElementById('timer').innerText = `Zeit: ${minutes}:${seconds.toString().padStart(2, '0')}`;
         if (timeLeft <= 0) {
             clearInterval(timer);
-            finishQuiz();
+            finishQuiz(); // Finalizăm quiz-ul dacă timpul expiră
         }
     }, 1000);
 }
 
-function updateQuestionNumber() {
-    document.getElementById('question-number').innerText = `Frage ${currentQuestionIndex + 1} von ${questions.length}`;
-}
-
+// Funcția pentru afișarea întrebării curente și a numărului de întrebare
 function showQuestion() {
     const questionElement = document.getElementById('question-container');
+    const questionNumberElement = document.getElementById('question-number');
     const currentQuestion = questions[currentQuestionIndex];
 
+    // Afișăm numărul întrebării
+    questionNumberElement.innerText = `Frage ${currentQuestionIndex + 1} von ${questions.length}`;
+
+    // Generăm conținutul întrebării
     let questionHTML = `
         <p>${currentQuestion.question}</p>
         <table class="answer-options">
@@ -567,10 +570,9 @@ function showQuestion() {
 
     questionHTML += `</table>`;
     questionElement.innerHTML = questionHTML;
-
-    updateQuestionNumber();
 }
 
+// Salvăm răspunsul utilizatorului și trecem la următoarea întrebare
 function saveUserAnswer() {
     const selectedOption = document.querySelector('input[name="answer"]:checked');
     if (selectedOption) {
@@ -582,6 +584,7 @@ function saveUserAnswer() {
     }
 }
 
+// Calculăm răspunsurile corecte și afișăm rezultatul final
 function finishQuiz() {
     clearInterval(timer);
     const totalQuestions = questions.length;
@@ -604,6 +607,7 @@ function finishQuiz() {
     document.getElementById('finish-btn').style.display = 'none';
 }
 
+// Event listeners pentru butoane
 document.getElementById('next-btn').addEventListener('click', function() {
     saveUserAnswer();
     if (currentQuestionIndex < questions.length - 1) {
@@ -620,9 +624,12 @@ document.getElementById('prev-btn').addEventListener('click', function() {
 });
 
 document.getElementById('finish-btn').addEventListener('click', function() {
-    saveUserAnswer();
-    finishQuiz();
+    saveUserAnswer(); // Salvăm răspunsul curent
+    finishQuiz(); // Finalizăm quiz-ul
 });
 
-startTimer();
-showQuestion();
+// Inițializăm quiz-ul la încărcarea paginii
+document.addEventListener('DOMContentLoaded', () => {
+    startTimer(); // Pornim timer-ul
+    showQuestion(); // Afișăm prima întrebare
+});
