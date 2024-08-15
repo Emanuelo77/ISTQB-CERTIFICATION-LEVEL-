@@ -5,7 +5,7 @@ const questions = [
         
         `,
         answers: [
-            { text: "Nachweis, dass das zu prüfende System keine Fehlerzustände mehr hat", correct: false },
+            { text: "Nachweis, dass da zu prüfende System keine Fehlerzustände mehr hat", correct: false },
             { text: "Nachweis, dass es nach der produktiven Inbetriebnahme des Systems keine Fehlerwirkungen geben wird", correct: false },
             { text: "Verringerung der Risikostufe des Testobjekts und Aufbau von Vertrauen in das Qualitätsniveau", correct: true },
             { text: "Überprüfung, dass alle Kombinationen von Eingabewerten getestet wurden", correct: false }

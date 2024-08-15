@@ -687,12 +687,16 @@ const questions = [
     }
 ];
 
-
 let currentQuestionIndex = 0;
 let userAnswers = new Array(questions.length).fill(null); // Stochează răspunsurile utilizatorului
 let score = 0;
 let timer;
 let timeLeft = 3600; // 60 minute în secunde
+
+// Funcția pentru amestecarea întrebărilor
+function shuffleQuestions() {
+    questions.sort(() => Math.random() - 0.5);
+}
 
 // Funcția pentru pornirea timer-ului
 function startTimer() {
@@ -796,6 +800,9 @@ document.getElementById('end-btn').addEventListener('click', function() {
     finishQuiz(); // Finalizăm quiz-ul
 });
 
+// Aici apelăm funcția de amestecare a întrebărilor înainte de a începe quiz-ul
+shuffleQuestions(); // Amestecăm întrebările
+
 // Inițializăm quiz-ul
 startTimer(); // Pornim timer-ul
-showQuestion(); // Afișăm prima întrebare
+showQuestion(); // Af

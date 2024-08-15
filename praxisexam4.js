@@ -521,13 +521,19 @@ answers: [
     ]
 }
 ];
+// Funcția pentru amestecarea întrebărilor
+function shuffleQuestions() {
+    questions.sort(() => Math.random() - 0.5);
+}
 
+// Amestecăm întrebările înainte de a începe quiz-ul
+shuffleQuestions();
 
 let currentQuestionIndex = 0;
 let userAnswers = new Array(questions.length).fill(null); // Stochează răspunsurile utilizatorului
 let score = 0;
 let timer;
-let timeLeft = 3600; // 60 de minute în secunde
+let timeLeft = 3600; // 60 minute în secunde
 
 // Funcția pentru pornirea timer-ului
 function startTimer() {
@@ -630,6 +636,7 @@ document.getElementById('finish-btn').addEventListener('click', function() {
 
 // Inițializăm quiz-ul la încărcarea paginii
 document.addEventListener('DOMContentLoaded', () => {
+    shuffleQuestions(); // Amestecăm întrebările înainte de a începe quiz-ul
     startTimer(); // Pornim timer-ul
     showQuestion(); // Afișăm prima întrebare
 });

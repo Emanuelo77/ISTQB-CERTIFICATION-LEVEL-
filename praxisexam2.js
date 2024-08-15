@@ -535,6 +535,13 @@ const questions = [
     },    
 ];
 
+function shuffleQuestions() {
+    questions.sort(() => Math.random() - 0.5);
+}
+
+// Apelăm funcția de amestecare a întrebărilor înainte de a începe quiz-ul
+shuffleQuestions();
+
 let currentQuestionIndex = 0;
 let userAnswers = new Array(questions.length).fill(null); // Stochează răspunsurile utilizatorului
 let score = 0;
