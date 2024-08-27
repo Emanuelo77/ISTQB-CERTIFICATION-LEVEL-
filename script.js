@@ -1214,12 +1214,13 @@ const questions = [
             <p>Welche der folgenden Aussagen beschreibt einen Nachteil von unabhängigem Testen?</p>
             
         `,
-        "answers": [
-            { "text": "Hoher Schulungsaufwand des unabhängigen Testteams.", "correct": false },
-            { "text": "Geringes Finden von Fehlern aufgrund fehlender Informationen über das Testobjekt.", "correct": false },
-            { "text": "Mangelnde Zusammenarbeit und Kommunikationsprobleme zwischen Testern und dem Entwicklungsteam.", "correct": true }
-        ]
-    },    
+       "answers": [
+    { "text": "Hoher Schulungsaufwand des unabhängigen Testteams.", "correct": false },
+    { "text": "Geringes Finden von Fehlern aufgrund fehlender Informationen über das Testobjekt.", "correct": false },
+    { "text": "Mangelnde Zusammenarbeit und Kommunikationsprobleme zwischen Testern und dem Entwicklungsteam.", "correct": true },
+    { "text": "Übermäßige Abhängigkeit vom Entwicklungsteam.", "correct": false }
+]
+    },
     {
     question: `
     <p>Welche der folgenden Aussagen zu statischen Tests, wie Reviews oder statische Analysen, ist am ehesten gültig?</p>
